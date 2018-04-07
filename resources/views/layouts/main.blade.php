@@ -8,39 +8,43 @@
 
 <body>
 
-<div container>
+<div class="container">
 
 	<header>
 		<div id="logo"><a href="{{ url('/') }}"><h1>Salon Manager</h1></a></div>
 
-		<ul class="list--inline">
-        	<li><a href="{{ url('/') }}">Home</a></li>
-        	<li><a href="{{ url('/holiday/index') }}">Holidays</a></li>
-        	<li><a href="{{ url('/sick/index') }}">Sick Days</a></li>
-        	<li><a href="{{ url('/lieu/index') }}">Lieu Hours</a></li>
-        	<li><a href="{{ url('/freetime/index') }}">Free Time</a></li>
-        </ul>
-	</header>
+    	<a href="{{ url('/') }}"" class="button">Home</a>
+    	<a href="{{ url('/holiday/index') }}" class="button">Holidays</a>
+    	<a href="{{ url('/sick/index') }}" class="button">Sick Days</a>
+    	<a href="{{ url('/lieu/index') }}" class="button">Lieu Hours</a>
+    	<a href="{{ url('/freetime/index') }}" class="button">Free Time</a>
+    </header>
 	
+	@yield('content')
 	
-		@yield('content')
-	
-	<footer>
-			<ul class="list--inline">
-				<li><a href="{{ url('/') }}">Home</li>
-				@if (Auth::guest())
-					<li><a href="{{ url('/login') }}">Login</a></li>
-                @else 
-				<li><a href="{{ url('/logout') }}">Logout</a></li>
-				@endif
-				@if(Auth::user() && Auth::user()->staff->role == 1)
-					<li><a href="{{ url('/admin') }}">Admin</a></li>
-				@endif
-			</ul>
+	<footer class="row">
+		<a href="{{ url('/') }}" class="button button-clear">Home</a>
+		@if (Auth::guest())
+			<a href="{{ url('/login') }}" class="button button-clear">Login</a>
+        @else 
+		
+			<a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();" class="button button-clear">
+                {{ __('Logout') }}
+            </a>
+		        
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+		@endif
+		@if(Auth::user() && Auth::user()->staff->role == 1)
+			<a href="{{ url('/admin') }}" class="button button-clear">Admin</a>
+		@endif
 	</footer>
 	
 
-</div><!-- page -->
+</div>
 
 </body>
 </html>
