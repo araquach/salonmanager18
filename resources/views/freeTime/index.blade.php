@@ -13,13 +13,11 @@
 @include('widgets.freeTime')
 
 <nav class"pageHeadNav">
-<ul class="list--inline">
-<li><a href="{{ url('/freetime/create') }}">Book Free Time</a></li>
-<li><a href="{{ url('/freetime/index', 'upcoming') }}">Upcoming Free Time</a></li>
-<li><a href="{{ url('/freetime/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/freetime/index', 'denied') }}">Denied Free Time</a></li>
-<li><a href="{{ url('/freetime/index', 'all') }}">All Free Time</a></li>
-</ul>
+	<a href="{{ url('/freetime/create') }}" class="button button-outline">Book Free Time</a>
+	<a href="{{ url('/freetime/index', 'upcoming') }}" class="button button-outline">Upcoming Free Time</a>
+	<a href="{{ url('/freetime/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
+	<a href="{{ url('/freetime/index', 'denied') }}" class="button button-outline">Denied Free Time</a>
+	<a href="{{ url('/freetime/index', 'all') }}" class="button button-outline">All Free Time</a>
 </nav>
 
 </div> <!--.pageHead freeTime-->

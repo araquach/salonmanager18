@@ -14,13 +14,11 @@
 	@include('widgets.admin.freeTime')
 
 	<nav class"pageHeadNav">
-		<ul class="list--inline">
-			<li><a href="{{ url('/admin/freetime/create') }}">Book Free Time</a></li>
-			<li><a href="{{ url('/admin/freetime/index', 'awaiting') }}">Awaiting Approval</a></li>
-			<li><a href="{{ url('/admin/freetime/index', 'approved') }}">Approved Free Time</a></li>
-			<li><a href="{{ url('/admin/freetime/index', 'denied') }}">Denied Free Time</a></li>
-			<li><a href="{{ url('/admin/freetime/index', 'all') }}">All Free Time</a></li>
-		</ul>
+		<a href="{{ url('/admin/freetime/create') }}" class="button button-outline">Book Free Time</a>
+		<a href="{{ url('/admin/freetime/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
+		<a href="{{ url('/admin/freetime/index', 'approved') }}" class="button button-outline">Approved Free Time</a>
+		<a href="{{ url('/admin/freetime/index', 'denied') }}" class="button button-outline">Denied Free Time</a>
+		<a href="{{ url('/admin/freetime/index', 'all') }}" class="button button-outline">All Free Time</a>
 	</nav>
 
 </div> <!--.pageHead freeTime-->

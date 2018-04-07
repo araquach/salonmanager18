@@ -14,13 +14,11 @@
 	@include('widgets.admin.holiday')
 
 	<nav class"pageHeadNav">
-		<ul class="list--inline">
-			<li><a href="{{ url('/admin/holiday/create') }}">Book holiday</a></li>
-			<li><a href="{{ url('/admin/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
-			<li><a href="{{ url('/admin/holiday/index', 'approved') }}">Approved Holidays</a></li>
-			<li><a href="{{ url('/admin/holiday/index', 'denied') }}">Denied Holidays</a></li>
-			<li><a href="{{ url('/admin/holiday/index', 'all') }}">All Holidays</a></li>
-		</ul>
+		<a href="{{ url('/admin/holiday/create') }}" class="button button-outline">Book holiday</a>
+		<a href="{{ url('/admin/holiday/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
+		<a href="{{ url('/admin/holiday/index', 'approved') }}" class="button button-outline">Approved Holidays</a>
+		<a href="{{ url('/admin/holiday/index', 'denied') }}" class="button button-outline">Denied Holidays</a>
+		<a href="{{ url('/admin/holiday/index', 'all') }}" class="button button-outline">All Holidays</a>
 	</nav>
 
 </div> <!--.pageHead holiday-->

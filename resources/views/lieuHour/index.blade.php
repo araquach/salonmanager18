@@ -13,13 +13,11 @@
 @include('widgets.lieuHour')
 
 <nav class"pageHeadNav">
-	<ul class="list--inline">
-		<li><a href="{{ url('/lieu/create') }}">Log Lieu Hours</a></li>
-		<li><a href="{{ url('/lieu/index', 'upcoming') }}">Upcoming Lieu</a></li>
-		<li><a href="{{ url('/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
-		<li><a href="{{ url('/lieu/index', 'denied') }}">Denied Lieu Hours</a></li>
-		<li><a href="{{ url('/lieu/index', 'all') }}">All Lieu Hours</a></li>
-	</ul>
+	<a href="{{ url('/lieu/create') }}" class="button button-outline">Log Lieu Hours</a>
+	<a href="{{ url('/lieu/index', 'upcoming') }}" class="button button-outline">Upcoming Lieu</a>
+	<a href="{{ url('/lieu/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
+	<a href="{{ url('/lieu/index', 'denied') }}" class="button button-outline">Denied Lieu Hours</a>
+	<a href="{{ url('/lieu/index', 'all') }}" class="button button-outline">All Lieu Hours</a>
 </nav>
 
 </div> <!--.pageHead lieuHour-->

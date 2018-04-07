@@ -13,13 +13,11 @@
 @include('widgets.holiday')
 
 <nav class"pageHeadNav">
-<ul class="list--inline">
-<li><a href="{{ url('/holiday/create') }}">Book holiday</a></li>
-<li><a href="{{ url('/holiday/index', 'upcoming') }}">Upcoming Holidays</a></li>
-<li><a href="{{ url('/holiday/index', 'awaiting') }}">Awaiting Approval</a></li>
-<li><a href="{{ url('/holiday/index', 'denied') }}">Denied Holidays</a></li>
-<li><a href="{{ url('/holiday/index', 'all') }}">All Holidays</a></li>
-</ul>
+<a href="{{ url('/holiday/create') }}" class="button button-outline">Book holiday</a>
+<a href="{{ url('/holiday/index', 'upcoming') }}" class="button button-outline">Upcoming Holidays</a>
+<a href="{{ url('/holiday/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
+<a href="{{ url('/holiday/index', 'denied') }}" class="button button-outline">Denied Holidays</a>
+<a href="{{ url('/holiday/index', 'all') }}" class="button button-outline">All Holidays</a>
 </nav>
 
 </div> <!--.pageHead holiday-->

@@ -14,13 +14,11 @@
 	@include('widgets.admin.lieuHour')
 
 	<nav class"pageHeadNav">
-		<ul class="list--inline">
-			<li><a href="{{ url('/admin/lieu/create') }}">Book lieuHour</a></li>
-			<li><a href="{{ url('/admin/lieu/index', 'awaiting') }}">Awaiting Approval</a></li>
-			<li><a href="{{ url('/admin/lieu/index', 'approved') }}">Approved Lieu Hours</a></li>
-			<li><a href="{{ url('/admin/lieu/index', 'denied') }}">Denied Lieu Hours</a></li>
-			<li><a href="{{ url('/admin/lieu/index', 'all') }}">All Lieu Hours</a></li>
-		</ul>
+		<a href="{{ url('/admin/lieu/create') }}" class="button button-outline">Book lieuHour</a>
+		<a href="{{ url('/admin/lieu/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
+		<a href="{{ url('/admin/lieu/index', 'approved') }}" class="button button-outline">Approved Lieu Hours</a>
+		<a href="{{ url('/admin/lieu/index', 'denied') }}" class="button button-outline">Denied Lieu Hours</a>
+		<a href="{{ url('/admin/lieu/index', 'all') }}" class="button button-outline">All Lieu Hours</a>
 	</nav>
 
 </div> <!--.pageHead lieuHour-->

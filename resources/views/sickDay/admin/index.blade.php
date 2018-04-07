@@ -14,12 +14,10 @@
 	@include('widgets.admin.sickDay')
 
 	<nav class"pageHeadNav">
-		<ul class="list--inline">
-			<li><a href="{{ url('/admin/sick/create') }}">Log Sick Day</a></li>
-			<li><a href="{{ url('/admin/sick/index', 'awaiting') }}">Awaiting Deduction</a></li>
-			<li><a href="{{ url('/admin/sick/index', 'deducted') }}">Deducted Sick</a></li>
-			<li><a href="{{ url('/admin/sick/index', 'all') }}">All Sick Days</a></li>
-		</ul>
+		<a href="{{ url('/admin/sick/create') }}" class="button button-outline">Log Sick Day</a>
+		<a href="{{ url('/admin/sick/index', 'awaiting') }}" class="button button-outline">Awaiting Deduction</a>
+		<a href="{{ url('/admin/sick/index', 'deducted') }}" class="button button-outline">Deducted Sick</a>
+		<a href="{{ url('/admin/sick/index', 'all') }}" class="button button-outline">All Sick Days</a>
 	</nav>
 
 </div> <!--.pageHead sickDay-->
