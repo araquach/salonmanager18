@@ -14,7 +14,7 @@ class HolidayController extends Controller
     
     public function __construct(Holiday $holiday)
 	{
-		$this->middleware('auth');
+		$this->middleware('guest');
 		
 		$this->holiday = $holiday;
 	}

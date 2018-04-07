@@ -16,7 +16,7 @@ class AdminFreeTimeController extends Controller
     
     public function __construct(FreeTime $freeTime)
 	{
-		$this->middleware('admin');
+		$this->middleware('guest');
 		
 		$this->freeTime = $freeTime;
 	}

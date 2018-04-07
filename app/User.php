@@ -9,6 +9,13 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $dates = ['created_at', 'updated_at'];
+
+    public function staff()
+    {
+        return $this->belongsTo('App\Staff');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

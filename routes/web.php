@@ -96,3 +96,7 @@ Route::get('admin/freetime/{freeTime}/edit', 'AdminFreeTimeController@edit');
 Route::patch('admin/freetime/{freeTime}', 'AdminFreeTimeController@update');
 Route::patch('admin/freetime/{freeTime}', 'AdminFreeTimeController@authorise');
 // need destroy routes
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

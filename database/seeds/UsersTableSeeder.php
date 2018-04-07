@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'name' => 'Adam Carter',
+            'email' => 'araquach@yahoo.co.uk',
             'username' => 'araquach',
             'password' => Hash::make('blonde123'),
             'staff_id' => 1,
@@ -21,6 +22,7 @@ class UsersTableSeeder extends Seeder
         
         DB::table('users')->insert([
             'name' => 'Jimmy Sharpe',
+            'email' => 'jimmy@test.com',
             'username' => 'jimmy',
             'password' => Hash::make('jim123'),
             'staff_id' => 2,
@@ -29,6 +31,7 @@ class UsersTableSeeder extends Seeder
         
         DB::table('users')->insert([
             'name' => 'Isobelle Lamb',
+            'email' => 'iz@test.com',
             'username' => 'izzy',
             'password' => Hash::make('izzy123'),
             'staff_id' => 3,
@@ -37,6 +40,7 @@ class UsersTableSeeder extends Seeder
         
         DB::table('users')->insert([
             'name' => 'Michelle Railton',
+            'email' => 'shell@test.com',
             'username' => 'shell',
             'password' => Hash::make('shell123'),
             'staff_id' => 5,
@@ -45,6 +49,7 @@ class UsersTableSeeder extends Seeder
         
         DB::table('users')->insert([
             'name' => 'Kellie Reedy',
+            'email' => 'kel@test.com',
             'username' => 'kel',
             'password' => Hash::make('kel123'),
             'staff_id' => 6,
@@ -53,6 +58,7 @@ class UsersTableSeeder extends Seeder
         
         DB::table('users')->insert([
             'name' => 'Natalie Doxey',
+            'email' => 'nat@test.com',
             'username' => 'nat',
             'password' => Hash::make('nat123'),
             'staff_id' => 4,
