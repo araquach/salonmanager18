@@ -648,16 +648,16 @@ footer {
       padding-left: 10px; }
 
 .pageHead.holiday {
-  background: url("/images/icons/icons_holiday.png") no-repeat top 20px left 40px #1081CA; }
+  background: url("/images/icons/icons_holiday.png") no-repeat top 20px left 40px #0050EF; }
 
 .pageHead.lieuHour {
-  background: url("/images/icons/icons_lieu.png") no-repeat top 20px left 40px #744DA9; }
+  background: url("/images/icons/icons_lieu.png") no-repeat top 20px left 40px #76608A; }
 
 .pageHead.sickDay {
-  background: url("/images/icons/icons_sick.png") no-repeat top 20px left 40px #148282; }
+  background: url("/images/icons/icons_sick.png") no-repeat top 20px left 40px #A4C400; }
 
 .pageHead.freeTime {
-  background: url("/images/icons/icons_freeTime.png") no-repeat top 20px left 40px #B144C0; }
+  background: url("/images/icons/icons_freeTime.png") no-repeat top 20px left 40px #A20025; }
 
 form {
   max-width: 500px; }
@@ -686,16 +686,16 @@ form {
     margin-bottom: 60px; }
 
 .form.holiday {
-  background: url("/images/icons/icons_holiday.png") no-repeat top 20px right 50px #1081CA; }
+  background: url("/images/icons/icons_holiday.png") no-repeat top 20px right 50px #0050EF; }
 
 .form.freeTime {
-  background: url("/images/icons/icons_freeTime.png") no-repeat top 20px right 50px #B144C0; }
+  background: url("/images/icons/icons_freeTime.png") no-repeat top 20px right 50px #A20025; }
 
 .form.lieuHour {
-  background: url("/images/icons/icons_lieu.png") no-repeat top 20px right 50px #744DA9; }
+  background: url("/images/icons/icons_lieu.png") no-repeat top 20px right 50px #76608A; }
 
 .form.sickDay {
-  background: url("/images/icons/icons_sick.png") no-repeat top 20px right 50px #148282; }
+  background: url("/images/icons/icons_sick.png") no-repeat top 20px right 50px #A4C400; }
 
 #menuBox {
   padding: 20px; }
@@ -730,19 +730,19 @@ form {
     display: block; }
 
 .menu.holiday {
-  background: url("/images/icons/icons_holiday.png") no-repeat center 50px #1081CA;
+  background: url("/images/icons/icons_holiday.png") no-repeat center 50px #0050EF;
   background-size: 50%; }
 
 .menu.freeTime {
-  background: url("/images/icons/icons_freeTime.png") no-repeat center 50px #B144C0;
+  background: url("/images/icons/icons_freeTime.png") no-repeat center 50px #A20025;
   background-size: 50%; }
 
 .menu.sickDay {
-  background: url("/images/icons/icons_sick.png") no-repeat center 50px #148282;
+  background: url("/images/icons/icons_sick.png") no-repeat center 50px #A4C400;
   background-size: 50%; }
 
 .menu.lieuHour {
-  background: url("/images/icons/icons_lieu.png") no-repeat center 50px #744DA9;
+  background: url("/images/icons/icons_lieu.png") no-repeat center 50px #76608A;
   background-size: 50%; }
 
 .info li {
