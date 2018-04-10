@@ -6,10 +6,42 @@ $lieuHour: #76608A;
 $sickDay: #A4C400;
 $freeTime: #A20025;
 
- body {
+body {
     background-color: $dark;
     padding: 0 10%;
     min-width: 800px;
+}
+
+h1, h2, h3, h4, p {
+	color: #FFF;
+}
+
+li {
+	margin-bottom: 0;
+}
+
+input {
+	color: #FFF;
+}
+
+.button.button-outline {
+	color: #FFF;
+	border: .3rem solid #FFF;
+	border-radius: 10rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	line-height: 3.3rem;
+	margin-right: .7rem;
+
+	&:hover {
+		color: #FFF;
+		border-color: #FFF;
+		opacity: .7;
+	} 
+}
+
+.button.button-clear {
+	color: #FFF;
 }
 
 header {
