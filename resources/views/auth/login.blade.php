@@ -19,10 +19,10 @@
         {!! Form::label('password', 'Password') !!}
         {!! Form::text('password', old('password')) !!}
         {!! $errors->first('password', '<div class="errorMessage">:message</div>') !!}
-    
-        {!! Form::label('remember', 'Remember Me') !!}
+    <div class="float-right">
+        {!! Form::label('remember', 'Remember Me', array('class' => 'label-inline')) !!}
         {!! Form::checkBox('remember') !!}
-    
+    </div>
         {!! Form::submit('Login') !!}
 
 {{ Form::close() }}
