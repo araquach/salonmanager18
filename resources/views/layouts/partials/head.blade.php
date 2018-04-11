@@ -21,4 +21,5 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ elixir('css/app.css') }}" />
 	
 	<script type="text/javascript" src="{{ URL::asset('scripts/vue.js') }}"></script>
+	<script type="text/javascript" src="{{ URL::asset('scripts/jquery.js') }}"></script>
 </head>

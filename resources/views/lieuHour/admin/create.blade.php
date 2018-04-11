@@ -38,43 +38,35 @@
 	{!! Form::hidden('approved', 2) !!}
 	
 	<div class="row question">
-		<p>
-	    	<p class="scale_label">Add</p>
-	    	{!! Form::radio('add_redeem', '1') !!}
-	    	<p class="scale_label">Redeem</p>
-	    	{!! Form::radio('add_redeem', '2') !!}
-	        
-	    	{!! $errors->first('add_redeem', '<div class="errorMessage">:message</div>') !!}
-		</p>
+	
+    	<p class="scale_label">Add</p>
+    	{!! Form::radio('add_redeem', '1') !!}
+    	<p class="scale_label">Redeem</p>
+    	{!! Form::radio('add_redeem', '2') !!}
+        
+    	{!! $errors->first('add_redeem', '<div class="errorMessage">:message</div>') !!}
+		
 	</div>
 	
-	<p>
-    	{!! Form::label('staff_id', 'Staff:') !!}
-    	{!! Form::select('staff_id', $staffs) !!}
-    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
-	</p>
+
+	{!! Form::label('staff_id', 'Staff:') !!}
+	{!! Form::select('staff_id', $staffs) !!}
+	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('date_regarding', 'Date:') !!}
+	{!! Form::date('date_regarding') !!}
+	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('lieu_hours', 'Hours:') !!}
+	{!! Form::text('lieu_hours') !!}
+	{!! $errors->first('lieu_hours', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('description', 'Description:') !!}
+	{!! Form::text('description') !!}
+	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
 	
-	<p>
-    	{!! Form::label('date_regarding', 'Date:') !!}
-    	{!! Form::date('date_regarding') !!}
-    	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
-	</p>
+	{!! Form::submit('Save') !!}
 	
-	<p>
-    	{!! Form::label('lieu_hours', 'Hours:') !!}
-    	{!! Form::text('lieu_hours') !!}
-    	{!! $errors->first('lieu_hours', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
-    	{!! Form::label('description', 'Description:') !!}
-    	{!! Form::text('description') !!}
-    	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
-	    {!! Form::submit('Save') !!}
-	</p>
 	
 	<a href="{{ action('AdminLieuHourController@index') }}">cancel</a>
 

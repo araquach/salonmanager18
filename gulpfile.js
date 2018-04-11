@@ -20,7 +20,7 @@ elixir(function(mix) {
     .copy(
         'node_modules/jquery/dist/jquery.js',
         'resources/assets/js'
-    )
+    ),
     
     mix.scripts([
         'vue.js',
@@ -30,7 +30,10 @@ elixir(function(mix) {
         'jquery.js',
      ], 'public/scripts/jquery.js');
     
-    mix.sass('app.scss');
+    mix.sass([
+        'app.scss',
+        'jqueryui.scss'
+        ]);
 
     mix.version([
         'public/css/app.css'

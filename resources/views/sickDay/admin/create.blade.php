@@ -35,51 +35,49 @@
 	   
 	@endif
 	
-	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
     	{!! Form::select('staff_id', $staffs) !!}
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
-	</p>
 		
-		<p>
-	    	{!! Form::label('sick_from', 'From:') !!}
-	    	{!! Form::date('sick_from') !!}
-	    	{!! $errors->first('sick_from', '<div class="errorMessage">:message</div>') !!}
-		</p>
+	
+    	{!! Form::label('sick_from', 'From:') !!}
+    	{!! Form::date('sick_from') !!}
+    	{!! $errors->first('sick_from', '<div class="errorMessage">:message</div>') !!}
 		
-		<p>
-	    	{!! Form::label('sick_to', 'To:') !!}
-	    	{!! Form::date('sick_to') !!}
-	    	{!! $errors->first('sick_to', '<div class="errorMessage">:message</div>') !!}
-		</p>
 		
-		<p>
-			{!! Form::label('sick_hours', 'Number of days:') !!}
-			
-			<input v-model="days" name="sick_hours" type="number" id="sick_hours">
-			
-			<input v-model="hours"input name="sick_hours" type="hidden">
-			{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}
-		</p>
 		
-		<p>
-	    	{!! Form::label('description', 'Description:') !!}
-	    	{!! Form::text('description') !!}
-	    	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
-		</p>
+    	{!! Form::label('sick_to', 'To:') !!}
+    	{!! Form::date('sick_to') !!}
+    	{!! $errors->first('sick_to', '<div class="errorMessage">:message</div>') !!}
+	
+	
+	
+		{!! Form::label('sick_hours', 'Number of days:') !!}
+		
+		<input v-model="days" name="sick_hours" type="number" id="sick_hours">
+		
+		<input v-model="hours"input name="sick_hours" type="hidden">
+		{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}
+	
+	
+	
+    	{!! Form::label('description', 'Description:') !!}
+    	{!! Form::text('description') !!}
+    	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
+		
 		
 		<div class="row question">
-			<p>
-		    	<p class="scale_label">Deducted</p>
-		    	{!! Form::radio('deducted', '1') !!}
-		    	<p class="scale_label">Pending</p>
-		    	{!! Form::radio('deducted', '0') !!}
-			</p>
+			
+	    	<p class="scale_label">Deducted</p>
+	    	{!! Form::radio('deducted', '1') !!}
+	    	<p class="scale_label">Pending</p>
+	    	{!! Form::radio('deducted', '0') !!}
+			
 		</div>
 		
-		<p>
-		    {!! Form::submit('Save') !!}
-		</p>
+	
+		{!! Form::submit('Save') !!}
+		
 		
 		<a href="{{ action('AdminSickDayController@index') }}">cancel</a>
 	

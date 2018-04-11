@@ -36,54 +36,43 @@
 @endif
 
 	{!! Form::hidden('approved', 2) !!}
-	
-	<p>
-    	{!! Form::label('staff_id', 'Staff:') !!}
-    	{!! Form::select('staff_id', $staffs) !!}
-    	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
-    	{!! Form::label('request_date_from', 'From:') !!}
-    	{!! Form::date('request_date_from') !!}
-    	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
-    	{!! Form::label('request_date_to', 'To:') !!}
-    	{!! Form::date('request_date_to') !!}
-    	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
-	</p>
+
+	{!! Form::label('staff_id', 'Staff:') !!}
+	{!! Form::select('staff_id', $staffs) !!}
+	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('request_date_from', 'From:') !!}
+	{!! Form::date('request_date_from') !!}
+	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('request_date_to', 'To:') !!}
+	{!! Form::date('request_date_to') !!}
+	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('hours_requested', 'Days Requested:') !!}
 		
-	<p>
-		{!! Form::label('hours_requested', 'Days Requested:') !!}
-		
-		<input v-model="days" name="hours_requested" type="number" id="hours_requested">
-		
-		<input v-model="hours"input name="hours_requested" type="hidden">
-		{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
-	</p>
+	<input v-model="days" name="hours_requested" type="number" id="hours_requested">
+	
+	<input v-model="hours"input name="hours_requested" type="hidden">
+	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	
 	<div class="row question">
-		<p>
-			{!! Form::label('saturday', 'How Many Saturdays:') !!}
-	    	<p class="scale_label">0</p>
-	    	{!! Form::radio('saturday', '0') !!}
-	    	<p class="scale_label">1/2</p>
-	    	{!! Form::radio('saturday', '.5') !!}
-	        <p class="scale_label">1</p>
-	        {!! Form::radio('saturday', '1') !!}
-	        <p class="scale_label">1 1/2</p>
-	        {!! Form::radio('saturday', '1.5') !!}
-	        <p class="scale_label">2</p>
-	        {!! Form::radio('saturday', '2') !!}
-	    	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
-		</p>
+		{!! Form::label('saturday', 'How Many Saturdays:') !!}
+    	<p class="scale_label">0</p>
+    	{!! Form::radio('saturday', '0') !!}
+    	<p class="scale_label">1/2</p>
+    	{!! Form::radio('saturday', '.5') !!}
+        <p class="scale_label">1</p>
+        {!! Form::radio('saturday', '1') !!}
+        <p class="scale_label">1 1/2</p>
+        {!! Form::radio('saturday', '1.5') !!}
+        <p class="scale_label">2</p>
+        {!! Form::radio('saturday', '2') !!}
+    	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
 	</div>
 	
-	<p>
-	    {!! Form::submit('Save') !!}
-	</p>
+	   {!! Form::submit('Save') !!}
+
 	
 	<a href="{{ action('AdminHolidayController@index') }}">cancel</a>
 

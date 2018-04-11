@@ -37,34 +37,24 @@
 	
 	{!! Form::hidden('approved', 2) !!}
 	
-	<p>
     	{!! Form::label('staff_id', 'Staff:') !!}
     	{!! Form::select('staff_id', $staffs) !!}
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
+
     	{!! Form::label('date_regarding', 'Date:') !!}
     	{!! Form::date('date_regarding') !!}
     	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
+
     	{!! Form::label('free_time_hours', 'Number of hours:') !!}
     	{!! Form::number('free_time_hours') !!}
     	{!! $errors->first('free_time_hours', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
+
     	{!! Form::label('description', 'Description:') !!}
     	{!! Form::text('description') !!}
     	{!! $errors->first('description', '<div class="errorMessage">:message</div>') !!}
-	</p>
-	
-	<p>
+
 	    {!! Form::submit('Save') !!}
-	</p>
-	
+
 	<a href="{{ action('AdminFreeTimeController@index') }}">cancel</a>
 
 {{ Form::close() }}
