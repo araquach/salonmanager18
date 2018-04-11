@@ -56,29 +56,12 @@
 	{!! Form::text('request_date_to', '', array('class' => 'datepicker')) !!}
 	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 
-		
-
 	{!! Form::label('hours_requested', 'Days Requested:') !!}
 		
 	<input v-model="days" name="hours_requested" type="number" id="hours_requested">
 		
 	<input v-model="hours"input name="hours_requested" type="hidden">
 	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
-	
-	<div class="row question">
-			{!! Form::label('saturday', 'How Many Saturdays:') !!}
-	    	<p class="scale_label">0</p>
-	    	{!! Form::radio('saturday', '0') !!}
-	    	<p class="scale_label">1/2</p>
-	    	{!! Form::radio('saturday', '.5') !!}
-	        <p class="scale_label">1</p>
-	        {!! Form::radio('saturday', '1') !!}
-	        <p class="scale_label">1 1/2</p>
-	        {!! Form::radio('saturday', '1.5') !!}
-	        <p class="scale_label">2</p>
-	        {!! Form::radio('saturday', '2') !!}
-	    	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
-	</div>
 	
 	{!! Form::submit('Book') !!}
 	

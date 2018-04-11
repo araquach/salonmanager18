@@ -49,5 +49,27 @@ class Holiday extends Model
             return $model->prebooked = 1;
             
         });
+
+        self::creating(function($model)
+        {
+
+            $start = new DateTime($model->request_date_from);
+            $end = new DateTime($model->request_date_to);
+
+            $interval = new DateInterval('P1D');
+            $daterange = new DatePeriod($start, $interval ,$end);
+
+            $saturdays = 0;
+            foreach($daterange as $date){
+                $days = $date->format('D');
+                if ($days == 'Sat') {
+                    $saturdays++;
+                }
+            }
+
+            return $saturdays;
+        });
     }
+
+
 }
