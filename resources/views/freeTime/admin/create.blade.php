@@ -42,11 +42,11 @@
     	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 
     	{!! Form::label('date_regarding', 'Date:') !!}
-    	{!! Form::date('date_regarding') !!}
+    	{!! Form::text('date_regarding', '', ['class' => 'datepicker']) !!}
     	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
 
     	{!! Form::label('free_time_hours', 'Number of hours:') !!}
-    	{!! Form::number('free_time_hours') !!}
+    	{!! Form::text('free_time_hours') !!}
     	{!! $errors->first('free_time_hours', '<div class="errorMessage">:message</div>') !!}
 
     	{!! Form::label('description', 'Description:') !!}

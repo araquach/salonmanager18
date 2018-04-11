@@ -36,26 +36,21 @@
 								pending 
 							@endif" >
 							
-			<b>{!! $lieuHour->staff->first_name !!} {!! $lieuHour->staff->second_name !!}</b>
+			<p>{!! $lieuHour->staff->first_name !!} {!! $lieuHour->staff->second_name !!}</p>
 			
 			@if($lieuHour->add_redeem == 1)
-				<b>Add</b>
+				<p>Add</p>
 			@elseif($lieuHour->add_redeem == 2)
-				<b>Redeem</b>
+				<p>Redeem</p>
 			@else
-				<b>Not Sure</b>
+				<p>Not Sure</p>
 			@endif
 			
-			<br>
+			<p>Request Date:</p> 
+			<p>{{ $lieuHour->date_regarding->format('d/m/Y') }}</p>
 			
-			<b>Request Date:</b> 
-			{{ $lieuHour->date_regarding->format('d/m/Y') }}
-			<br>
-			
-			<b>Hours:</b> 
-			{!! $lieuHour->lieu_hours !!}
-			
-			<br>
+			<p>Hours:</p> 
+			<p>{!! $lieuHour->lieu_hours !!}</p>
 			
 			@if($lieuHour->approved == 1)
 				Denied

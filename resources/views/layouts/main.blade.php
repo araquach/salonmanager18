@@ -8,6 +8,14 @@
 
 <body>
 
+<script>
+  $( function() {
+    $(".datepicker").datepicker({ dateFormat: "yy-mm-dd" });
+  } );
+</script>
+
+
+
 <div class="container">
 
 	<header>

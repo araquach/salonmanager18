@@ -36,13 +36,11 @@
 							pending 
 						@endif" >
 						
-		<b>Date:</b> 
-		{{ $freeTime->date_regarding->format('d/m/Y') }}
-		<br>
+		<p>Date:</p> 
+		<p>{{ $freeTime->date_regarding->format('d/m/Y') }}</p>
 		
-		<b>Hours Requested:</b> 
-		{!! $freeTime->free_time_hours !!}
-		<br>
+		<p>Hours Requested:</p> 
+		<p>{!! $freeTime->free_time_hours !!}</p>
 
 		@if($freeTime->approved == 1)
 			Denied
@@ -52,7 +50,6 @@
 			Waiting Approval
 		@endif
 		
-		<br>
 	</div>
 </a>
 

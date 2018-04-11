@@ -54,7 +54,7 @@
 	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 
 	{!! Form::label('date_regarding', 'Date:') !!}
-	{!! Form::date('date_regarding') !!}
+	{!! Form::date('date_regarding', '', ['class' => 'datepicker']) !!}
 	{!! $errors->first('date_regarding', '<div class="errorMessage">:message</div>') !!}
 
 	{!! Form::label('lieu_hours', 'Hours:') !!}

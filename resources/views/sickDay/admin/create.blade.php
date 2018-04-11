@@ -41,20 +41,20 @@
 		
 	
     	{!! Form::label('sick_from', 'From:') !!}
-    	{!! Form::date('sick_from') !!}
+    	{!! Form::text('sick_from', '', ['class' => 'datepicker']) !!}
     	{!! $errors->first('sick_from', '<div class="errorMessage">:message</div>') !!}
 		
 		
 		
     	{!! Form::label('sick_to', 'To:') !!}
-    	{!! Form::date('sick_to') !!}
+    	{!! Form::text('sick_to', '', ['class' => 'datepicker']) !!}
     	{!! $errors->first('sick_to', '<div class="errorMessage">:message</div>') !!}
 	
 	
 	
 		{!! Form::label('sick_hours', 'Number of days:') !!}
 		
-		<input v-model="days" name="sick_hours" type="number" id="sick_hours">
+		<input v-model="days" name="sick_hours" type="text" id="sick_hours">
 		
 		<input v-model="hours"input name="sick_hours" type="hidden">
 		{!! $errors->first('sick_hours', '<div class="errorMessage">:message</div>') !!}

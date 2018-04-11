@@ -36,21 +36,16 @@
 							pending 
 						@endif" >
 						
-		<b>{!! $holiday->staff->first_name !!} {!! $holiday->staff->second_name !!}</b> 
-		
-		<br>
+		<p>{!! $holiday->staff->first_name !!} {!! $holiday->staff->second_name !!}</p>
 	
-		<b>From:</b> 
-		{{ $holiday->request_date_from->format('d/m/Y') }}
-		<br>
+		<p>From:</p> 
+		<p>{{ $holiday->request_date_from->format('d/m/Y') }}</p>
 	
-		<b>To:</b> 
-		{{ $holiday->request_date_to->format('d/m/Y') }}
-		<br>
+		<p>To:</p> 
+		<p>{{ $holiday->request_date_to->format('d/m/Y') }}</p>
 		
-		<b>Requested:</b> 
-		{!! calculateDays($holiday->hours_requested) !!}
-		<br>
+		<p>Requested:</p> 
+		<p>{!! calculateDays($holiday->hours_requested) !!}</p>
 		
 		@if($holiday->saturday == 0.5) 
 		 	<img src="{{ asset('/images/icons/icons_halfxsat.png') }}" />

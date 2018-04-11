@@ -33,20 +33,16 @@
 							pending 
 						@endif" >
 							
-			<b>{!! $sickDay->staff->first_name !!} {!! $sickDay->staff->second_name !!}</b> 
-			<br>
+			<p>{!! $sickDay->staff->first_name !!} {!! $sickDay->staff->second_name !!}</p> 
 			
-			<b>From:</b> 
-			{{ $sickDay->sick_from->format('d/m/Y') }}
-			<br>
+			<p>From:</p> 
+			<p>{{ $sickDay->sick_from->format('d/m/Y') }}</p>
 		
-			<b>To:</b> 
-			{{ $sickDay->sick_to->format('d/m/Y') }}
-			<br>
+			<p>To:</p> 
+			<p>{{ $sickDay->sick_to->format('d/m/Y') }}</p>
 			
-			<b>Days Sick:</b> 
-			{!! calculateDays($sickDay->sick_hours) !!}
-			<br>
+			<p>Days Sick:</p> 
+			<p>{!! calculateDays($sickDay->sick_hours) !!}</p>
 		</div>
 	</a>
 	

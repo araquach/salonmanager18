@@ -37,17 +37,13 @@
 							pending 
 						@endif" >
 						
-		<b>{!! $freeTime->staff->first_name !!} {!! $freeTime->staff->second_name !!}</b> 
+		<p>{!! $freeTime->staff->first_name !!} {!! $freeTime->staff->second_name !!}</p>
 		
-		<br />
+		<p>Date:</p> 
+		<p>{{ $freeTime->date_regarding->format('d/m/Y') }}</p>
 		
-		<b>Date:</b> 
-		{{ $freeTime->date_regarding->format('d/m/Y') }}
-		<br>
-		
-		<b>Hours Requested:</b> 
-		{!! $freeTime->free_time_hours !!}
-		<br>
+		<p>Hours Requested:</p> 
+		<p>{!! $freeTime->free_time_hours !!}</p>
 
 		@if($freeTime->approved == 1)
 			Denied

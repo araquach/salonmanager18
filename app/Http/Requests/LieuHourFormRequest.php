@@ -25,7 +25,7 @@ class LieuHourFormRequest extends Request
     {
         return [
             'add_redeem' => 'required | numeric',
-            'date_regarding' => 'required | date | in_advance:2 | in_lieu:2',
+            'date_regarding' => 'required | date',
             'lieu_hours' => 'required | numeric | max:4',
             'description' => 'required',
         ];
@@ -34,8 +34,7 @@ class LieuHourFormRequest extends Request
     public function messages()
 	{
 	    return [
-	        'date_regarding.in_advance' => 'You can\'t book more than two weeks in advance',
-	        'date_regarding.in_lieu' => 'You can\'t redeem more than two weeks back',
+	        //
 		];
 	}
 }

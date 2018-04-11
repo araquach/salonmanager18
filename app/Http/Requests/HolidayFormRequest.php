@@ -3,7 +3,6 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
-use App\Rules\AvailableDays;
 
 class HolidayFormRequest extends Request
 {
@@ -27,8 +26,8 @@ class HolidayFormRequest extends Request
         return [
             'request_date_from' => 'required | date | after:yesterday',
             'request_date_to' => 'required | date | after_or_equal:request_date_from',
-            'hours_requested' => 'required | numeric', new AvailableDays,
-            'saturday' => 'numeric | available_saturdays',
+            'hours_requested' => 'required | numeric',
+            'saturday' => 'numeric',
         ];
     }
     
@@ -36,9 +35,7 @@ class HolidayFormRequest extends Request
 	{
 	    return [
 	        'hours_requested.required' => 'Days requested is required',
-	        'hours_requested.available_days' => 'You don\'t have enough days available',
-	        'saturday.available_saturdays' => 'You don\'t have enough Saturdays left',
-	        'request_date_to.on_or_after' => 'Your \'to\' date can\'t be before your \'from\' date',
+	        'request_date_to.after_or_equal' => 'Your \'to\' date can\'t be before your \'from\' date',
 		];
 	}
 }

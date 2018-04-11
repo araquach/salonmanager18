@@ -32,17 +32,14 @@
 							pending 
 						@endif" >
 	
-		<b>From:</b> 
-		{{ $sickDay->sick_from->format('d/m/Y') }}
-		<br />
+		<p>From:</p> 
+		<p>{{ $sickDay->sick_from->format('d/m/Y') }}</p>
 	
-		<b>To:</b> 
-		{{ $sickDay->sick_to->format('d/m/Y') }}
-		<br />
+		<p>To:</p> 
+		<p>{{ $sickDay->sick_to->format('d/m/Y') }}</p>
 		
-		<b>Sick Days:</b> 
-		{{ calculateDays($sickDay->sick_hours) }}
-		<br />
+		<p>Sick Days:</p> 
+		<p>{{ calculateDays($sickDay->sick_hours) }}</p>
 	</div>
 </a>
 

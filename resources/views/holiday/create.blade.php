@@ -8,14 +8,6 @@
 
 @section('content')
 
-<script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
-
-<script>
-  $( function() {
-    $( ".datepicker" ).datepicker();
-  } );
-  </script>
-
 <div class="form holiday" id="app">
 	
 	<h2>Book a holiday</h2>
@@ -48,20 +40,21 @@
 	{!! Form::hidden('approved', 0) !!}
 	
 	{!! Form::label('request_date_from', 'From:') !!}
-	{!! Form::text('request_date_from', '', array('class' => 'datepicker')) !!}
+	{!! Form::text('request_date_from', '', ['class' => 'datepicker']) !!}
 	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 	
 	
     {!! Form::label('request_date_to', 'To:') !!}
-	{!! Form::text('request_date_to', '', array('class' => 'datepicker')) !!}
+	{!! Form::text('request_date_to', '', ['class' => 'datepicker']) !!}
 	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 
-	{!! Form::label('hours_requested', 'Days Requested:') !!}
-		
-	<input v-model="days" name="hours_requested" type="number" id="hours_requested">
-		
-	<input v-model="hours"input name="hours_requested" type="hidden">
+	{!! Form::label('hours_requested', 'Hours Requested:') !!}
+	{!! Form::text('hours_requested') !!}
 	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
+
+	{!! Form::label('saturday', 'Saturdays:') !!}
+	{!! Form::text('saturday') !!}
+	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
 	
 	{!! Form::submit('Book') !!}
 	
@@ -72,22 +65,6 @@
 
 </div>
 
-<script>
 
-	new Vue({
-		el: '#app',
-		
-		data: {
-			days: '',
-		},
-		
-		computed: {
-			hours: function () {
-    			return this.days * 8
-    		}
-		}
-	})
-	
-</script>
 
 @stop

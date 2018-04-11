@@ -42,19 +42,6 @@ class CustomValidator {
         return true;
      }
      
-    public function validateOnOrAfter($attribute, $value, $parameters, $validator)
-    {
-        
-        $comparison = array_get($validator->getData(), $parameters[0]);
-        
-        if(Carbon::parse($comparison) > Carbon::parse($value))
-        {
-            return false;
-        }
-        
-        return true;
-        
-     }
      
      public function validateInAdvance($attribute, $value, $parameters, $validator)
      {

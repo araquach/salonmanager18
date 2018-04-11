@@ -42,36 +42,23 @@
 	{!! $errors->first('staff_id', '<div class="errorMessage">:message</div>') !!}
 
 	{!! Form::label('request_date_from', 'From:') !!}
-	{!! Form::date('request_date_from') !!}
+	{!! Form::text('request_date_from', '', ['class' => 'datepicker']) !!}
 	{!! $errors->first('request_date_from', '<div class="errorMessage">:message</div>') !!}
 
 	{!! Form::label('request_date_to', 'To:') !!}
-	{!! Form::date('request_date_to') !!}
+	{!! Form::text('request_date_to', '', ['class' => 'datepicker']) !!}
 	{!! $errors->first('request_date_to', '<div class="errorMessage">:message</div>') !!}
 
 	{!! Form::label('hours_requested', 'Days Requested:') !!}
-		
-	<input v-model="days" name="hours_requested" type="number" id="hours_requested">
-	
+	<input v-model="days" name="hours_requested" type="text" id="hours_requested">
 	<input v-model="hours"input name="hours_requested" type="hidden">
 	{!! $errors->first('hours_requested', '<div class="errorMessage">:message</div>') !!}
 	
-	<div class="row question">
-		{!! Form::label('saturday', 'How Many Saturdays:') !!}
-    	<p class="scale_label">0</p>
-    	{!! Form::radio('saturday', '0') !!}
-    	<p class="scale_label">1/2</p>
-    	{!! Form::radio('saturday', '.5') !!}
-        <p class="scale_label">1</p>
-        {!! Form::radio('saturday', '1') !!}
-        <p class="scale_label">1 1/2</p>
-        {!! Form::radio('saturday', '1.5') !!}
-        <p class="scale_label">2</p>
-        {!! Form::radio('saturday', '2') !!}
-    	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
-	</div>
+	{!! Form::label('saturday', 'To:') !!}
+	{!! Form::text('saturday') !!}
+	{!! $errors->first('saturday', '<div class="errorMessage">:message</div>') !!}
 	
-	   {!! Form::submit('Save') !!}
+	{!! Form::submit('Save') !!}
 
 	
 	<a href="{{ action('AdminHolidayController@index') }}">cancel</a>
