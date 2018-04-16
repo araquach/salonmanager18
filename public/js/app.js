@@ -1,13 +1,694 @@
-/*!
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Notification.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+
+		return {
+
+			message: 'Whats Up!!!'
+
+		};
+	}
+});
+
+/***/ }),
+
+/***/ "./node_modules/process/browser.js":
+/***/ (function(module, exports) {
+
+// shim for using process in browser
+var process = module.exports = {};
+
+// cached from whatever global is present so that test runners that stub it
+// don't break things.  But we need to wrap it in a try catch in case it is
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+// function because try/catches deoptimize in certain engines.
+
+var cachedSetTimeout;
+var cachedClearTimeout;
+
+function defaultSetTimout() {
+    throw new Error('setTimeout has not been defined');
+}
+function defaultClearTimeout () {
+    throw new Error('clearTimeout has not been defined');
+}
+(function () {
+    try {
+        if (typeof setTimeout === 'function') {
+            cachedSetTimeout = setTimeout;
+        } else {
+            cachedSetTimeout = defaultSetTimout;
+        }
+    } catch (e) {
+        cachedSetTimeout = defaultSetTimout;
+    }
+    try {
+        if (typeof clearTimeout === 'function') {
+            cachedClearTimeout = clearTimeout;
+        } else {
+            cachedClearTimeout = defaultClearTimeout;
+        }
+    } catch (e) {
+        cachedClearTimeout = defaultClearTimeout;
+    }
+} ())
+function runTimeout(fun) {
+    if (cachedSetTimeout === setTimeout) {
+        //normal enviroments in sane situations
+        return setTimeout(fun, 0);
+    }
+    // if setTimeout wasn't available but was latter defined
+    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+        cachedSetTimeout = setTimeout;
+        return setTimeout(fun, 0);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedSetTimeout(fun, 0);
+    } catch(e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+            return cachedSetTimeout.call(null, fun, 0);
+        } catch(e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+            return cachedSetTimeout.call(this, fun, 0);
+        }
+    }
+
+
+}
+function runClearTimeout(marker) {
+    if (cachedClearTimeout === clearTimeout) {
+        //normal enviroments in sane situations
+        return clearTimeout(marker);
+    }
+    // if clearTimeout wasn't available but was latter defined
+    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+        cachedClearTimeout = clearTimeout;
+        return clearTimeout(marker);
+    }
+    try {
+        // when when somebody has screwed with setTimeout but no I.E. maddness
+        return cachedClearTimeout(marker);
+    } catch (e){
+        try {
+            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+            return cachedClearTimeout.call(null, marker);
+        } catch (e){
+            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+            return cachedClearTimeout.call(this, marker);
+        }
+    }
+
+
+
+}
+var queue = [];
+var draining = false;
+var currentQueue;
+var queueIndex = -1;
+
+function cleanUpNextTick() {
+    if (!draining || !currentQueue) {
+        return;
+    }
+    draining = false;
+    if (currentQueue.length) {
+        queue = currentQueue.concat(queue);
+    } else {
+        queueIndex = -1;
+    }
+    if (queue.length) {
+        drainQueue();
+    }
+}
+
+function drainQueue() {
+    if (draining) {
+        return;
+    }
+    var timeout = runTimeout(cleanUpNextTick);
+    draining = true;
+
+    var len = queue.length;
+    while(len) {
+        currentQueue = queue;
+        queue = [];
+        while (++queueIndex < len) {
+            if (currentQueue) {
+                currentQueue[queueIndex].run();
+            }
+        }
+        queueIndex = -1;
+        len = queue.length;
+    }
+    currentQueue = null;
+    draining = false;
+    runClearTimeout(timeout);
+}
+
+process.nextTick = function (fun) {
+    var args = new Array(arguments.length - 1);
+    if (arguments.length > 1) {
+        for (var i = 1; i < arguments.length; i++) {
+            args[i - 1] = arguments[i];
+        }
+    }
+    queue.push(new Item(fun, args));
+    if (queue.length === 1 && !draining) {
+        runTimeout(drainQueue);
+    }
+};
+
+// v8 likes predictible objects
+function Item(fun, array) {
+    this.fun = fun;
+    this.array = array;
+}
+Item.prototype.run = function () {
+    this.fun.apply(null, this.array);
+};
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+process.version = ''; // empty string to avoid regexp issues
+process.versions = {};
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+process.prependListener = noop;
+process.prependOnceListener = noop;
+
+process.listeners = function (name) { return [] }
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
+};
+
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+process.umask = function() { return 0; };
+
+
+/***/ }),
+
+/***/ "./node_modules/setimmediate/setImmediate.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
+    "use strict";
+
+    if (global.setImmediate) {
+        return;
+    }
+
+    var nextHandle = 1; // Spec says greater than zero
+    var tasksByHandle = {};
+    var currentlyRunningATask = false;
+    var doc = global.document;
+    var registerImmediate;
+
+    function setImmediate(callback) {
+      // Callback can either be a function or a string
+      if (typeof callback !== "function") {
+        callback = new Function("" + callback);
+      }
+      // Copy function arguments
+      var args = new Array(arguments.length - 1);
+      for (var i = 0; i < args.length; i++) {
+          args[i] = arguments[i + 1];
+      }
+      // Store and register the task
+      var task = { callback: callback, args: args };
+      tasksByHandle[nextHandle] = task;
+      registerImmediate(nextHandle);
+      return nextHandle++;
+    }
+
+    function clearImmediate(handle) {
+        delete tasksByHandle[handle];
+    }
+
+    function run(task) {
+        var callback = task.callback;
+        var args = task.args;
+        switch (args.length) {
+        case 0:
+            callback();
+            break;
+        case 1:
+            callback(args[0]);
+            break;
+        case 2:
+            callback(args[0], args[1]);
+            break;
+        case 3:
+            callback(args[0], args[1], args[2]);
+            break;
+        default:
+            callback.apply(undefined, args);
+            break;
+        }
+    }
+
+    function runIfPresent(handle) {
+        // From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+        // So if we're currently running a task, we'll need to delay this invocation.
+        if (currentlyRunningATask) {
+            // Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+            // "too much recursion" error.
+            setTimeout(runIfPresent, 0, handle);
+        } else {
+            var task = tasksByHandle[handle];
+            if (task) {
+                currentlyRunningATask = true;
+                try {
+                    run(task);
+                } finally {
+                    clearImmediate(handle);
+                    currentlyRunningATask = false;
+                }
+            }
+        }
+    }
+
+    function installNextTickImplementation() {
+        registerImmediate = function(handle) {
+            process.nextTick(function () { runIfPresent(handle); });
+        };
+    }
+
+    function canUsePostMessage() {
+        // The test against `importScripts` prevents this implementation from being installed inside a web worker,
+        // where `global.postMessage` means something completely different and can't be used for this purpose.
+        if (global.postMessage && !global.importScripts) {
+            var postMessageIsAsynchronous = true;
+            var oldOnMessage = global.onmessage;
+            global.onmessage = function() {
+                postMessageIsAsynchronous = false;
+            };
+            global.postMessage("", "*");
+            global.onmessage = oldOnMessage;
+            return postMessageIsAsynchronous;
+        }
+    }
+
+    function installPostMessageImplementation() {
+        // Installs an event handler on `global` for the `message` event: see
+        // * https://developer.mozilla.org/en/DOM/window.postMessage
+        // * http://www.whatwg.org/specs/web-apps/current-work/multipage/comms.html#crossDocumentMessages
+
+        var messagePrefix = "setImmediate$" + Math.random() + "$";
+        var onGlobalMessage = function(event) {
+            if (event.source === global &&
+                typeof event.data === "string" &&
+                event.data.indexOf(messagePrefix) === 0) {
+                runIfPresent(+event.data.slice(messagePrefix.length));
+            }
+        };
+
+        if (global.addEventListener) {
+            global.addEventListener("message", onGlobalMessage, false);
+        } else {
+            global.attachEvent("onmessage", onGlobalMessage);
+        }
+
+        registerImmediate = function(handle) {
+            global.postMessage(messagePrefix + handle, "*");
+        };
+    }
+
+    function installMessageChannelImplementation() {
+        var channel = new MessageChannel();
+        channel.port1.onmessage = function(event) {
+            var handle = event.data;
+            runIfPresent(handle);
+        };
+
+        registerImmediate = function(handle) {
+            channel.port2.postMessage(handle);
+        };
+    }
+
+    function installReadyStateChangeImplementation() {
+        var html = doc.documentElement;
+        registerImmediate = function(handle) {
+            // Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+            // into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+            var script = doc.createElement("script");
+            script.onreadystatechange = function () {
+                runIfPresent(handle);
+                script.onreadystatechange = null;
+                html.removeChild(script);
+                script = null;
+            };
+            html.appendChild(script);
+        };
+    }
+
+    function installSetTimeoutImplementation() {
+        registerImmediate = function(handle) {
+            setTimeout(runIfPresent, 0, handle);
+        };
+    }
+
+    // If supported, we should attach to the prototype of global, since that is where setTimeout et al. live.
+    var attachTo = Object.getPrototypeOf && Object.getPrototypeOf(global);
+    attachTo = attachTo && attachTo.setTimeout ? attachTo : global;
+
+    // Don't get fooled by e.g. browserify environments.
+    if ({}.toString.call(global.process) === "[object process]") {
+        // For Node.js before 0.9
+        installNextTickImplementation();
+
+    } else if (canUsePostMessage()) {
+        // For non-IE10 modern browsers
+        installPostMessageImplementation();
+
+    } else if (global.MessageChannel) {
+        // For web workers, where supported
+        installMessageChannelImplementation();
+
+    } else if (doc && "onreadystatechange" in doc.createElement("script")) {
+        // For IE 6–8
+        installReadyStateChangeImplementation();
+
+    } else {
+        // For older browsers
+        installSetTimeoutImplementation();
+    }
+
+    attachTo.setImmediate = setImmediate;
+    attachTo.clearImmediate = clearImmediate;
+}(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js"), __webpack_require__("./node_modules/process/browser.js")))
+
+/***/ }),
+
+/***/ "./node_modules/timers-browserify/main.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var apply = Function.prototype.apply;
+
+// DOM APIs, for completeness
+
+exports.setTimeout = function() {
+  return new Timeout(apply.call(setTimeout, window, arguments), clearTimeout);
+};
+exports.setInterval = function() {
+  return new Timeout(apply.call(setInterval, window, arguments), clearInterval);
+};
+exports.clearTimeout =
+exports.clearInterval = function(timeout) {
+  if (timeout) {
+    timeout.close();
+  }
+};
+
+function Timeout(id, clearFn) {
+  this._id = id;
+  this._clearFn = clearFn;
+}
+Timeout.prototype.unref = Timeout.prototype.ref = function() {};
+Timeout.prototype.close = function() {
+  this._clearFn.call(window, this._id);
+};
+
+// Does not start the time, just sets up the members needed.
+exports.enroll = function(item, msecs) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = msecs;
+};
+
+exports.unenroll = function(item) {
+  clearTimeout(item._idleTimeoutId);
+  item._idleTimeout = -1;
+};
+
+exports._unrefActive = exports.active = function(item) {
+  clearTimeout(item._idleTimeoutId);
+
+  var msecs = item._idleTimeout;
+  if (msecs >= 0) {
+    item._idleTimeoutId = setTimeout(function onTimeout() {
+      if (item._onTimeout)
+        item._onTimeout();
+    }, msecs);
+  }
+};
+
+// setimmediate attaches itself to the global object
+__webpack_require__("./node_modules/setimmediate/setImmediate.js");
+// On some exotic environments, it's not clear which object `setimmeidate` was
+// able to install onto.  Search each possibility in the same order as the
+// `setimmediate` library.
+exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
+                       (typeof global !== "undefined" && global.setImmediate) ||
+                       (this && this.setImmediate);
+exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
+                         (typeof global !== "undefined" && global.clearImmediate) ||
+                         (this && this.clearImmediate);
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/component-normalizer.js":
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file.
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-66002d22\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Notification.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_c("h1", [_vm._v(_vm._s(_vm.message))])])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-66002d22", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue/dist/vue.common.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
  * Vue.js v2.5.16
  * (c) 2014-2018 Evan You
  * Released under the MIT License.
  */
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.Vue = factory());
-}(this, (function () { 'use strict';
+
 
 /*  */
 
@@ -581,7 +1262,7 @@ var tip = noop;
 var generateComponentTrace = (noop); // work around flow check
 var formatComponentName = (noop);
 
-{
+if (true) {
   var hasConsole = typeof console !== 'undefined';
   var classifyRE = /(?:^|[-_])(\w)/g;
   var classify = function (str) { return str
@@ -1116,7 +1797,7 @@ var strats = config.optionMergeStrategies;
 /**
  * Options with restrictions
  */
-{
+if (true) {
   strats.el = strats.propsData = function (parent, child, vm, key) {
     if (!vm) {
       warn(
@@ -1278,7 +1959,7 @@ strats.watch = function (
   if (childVal === nativeWatch) { childVal = undefined; }
   /* istanbul ignore if */
   if (!childVal) { return Object.create(parentVal || null) }
-  {
+  if (true) {
     assertObjectType(key, childVal, vm);
   }
   if (!parentVal) { return childVal }
@@ -1370,7 +2051,7 @@ function normalizeProps (options, vm) {
       if (typeof val === 'string') {
         name = camelize(val);
         res[name] = { type: null };
-      } else {
+      } else if (true) {
         warn('props must be strings when using array syntax.');
       }
     }
@@ -1382,7 +2063,7 @@ function normalizeProps (options, vm) {
         ? val
         : { type: val };
     }
-  } else {
+  } else if (true) {
     warn(
       "Invalid value for option \"props\": expected an Array or an Object, " +
       "but got " + (toRawType(props)) + ".",
@@ -1410,7 +2091,7 @@ function normalizeInject (options, vm) {
         ? extend({ from: key }, val)
         : { from: val };
     }
-  } else {
+  } else if (true) {
     warn(
       "Invalid value for option \"inject\": expected an Array or an Object, " +
       "but got " + (toRawType(inject)) + ".",
@@ -1453,7 +2134,7 @@ function mergeOptions (
   child,
   vm
 ) {
-  {
+  if (true) {
     checkComponents(child);
   }
 
@@ -1558,7 +2239,9 @@ function validateProp (
     observe(value);
     toggleObserving(prevShouldObserve);
   }
-  {
+  if (
+    true
+  ) {
     assertProp(prop, key, value, vm, absent);
   }
   return value
@@ -1735,7 +2418,7 @@ function globalHandleError (err, vm, info) {
 }
 
 function logError (err, vm, info) {
-  {
+  if (true) {
     warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
   }
   /* istanbul ignore else */
@@ -1865,7 +2548,7 @@ function nextTick (cb, ctx) {
 var mark;
 var measure;
 
-{
+if (true) {
   var perf = inBrowser && window.performance;
   /* istanbul ignore if */
   if (
@@ -1889,7 +2572,7 @@ var measure;
 
 var initProxy;
 
-{
+if (true) {
   var allowedGlobals = makeMap(
     'Infinity,undefined,NaN,isFinite,isNaN,' +
     'parseFloat,parseInt,decodeURI,decodeURIComponent,encodeURI,encodeURIComponent,' +
@@ -2124,7 +2807,7 @@ function extractPropsFromVNodeData (
   if (isDef(attrs) || isDef(props)) {
     for (var key in propOptions) {
       var altKey = hyphenate(key);
-      {
+      if (true) {
         var keyInLowerCase = key.toLowerCase();
         if (
           key !== keyInLowerCase &&
@@ -2370,7 +3053,9 @@ function resolveAsyncComponent (
           setTimeout(function () {
             if (isUndef(factory.resolved)) {
               reject(
-                "timeout (" + (res.timeout) + "ms)"
+                 true
+                  ? ("timeout (" + (res.timeout) + "ms)")
+                  : null
               );
             }
           }, res.timeout);
@@ -2517,7 +3202,7 @@ function eventsMixin (Vue) {
 
   Vue.prototype.$emit = function (event) {
     var vm = this;
-    {
+    if (true) {
       var lowerCaseEvent = event.toLowerCase();
       if (lowerCaseEvent !== event && vm._events[lowerCaseEvent]) {
         tip(
@@ -2744,7 +3429,7 @@ function mountComponent (
   vm.$el = el;
   if (!vm.$options.render) {
     vm.$options.render = createEmptyVNode;
-    {
+    if (true) {
       /* istanbul ignore if */
       if ((vm.$options.template && vm.$options.template.charAt(0) !== '#') ||
         vm.$options.el || el) {
@@ -2811,7 +3496,7 @@ function updateChildComponent (
   parentVnode,
   renderChildren
 ) {
-  {
+  if (true) {
     isUpdatingChildComponent = true;
   }
 
@@ -2865,7 +3550,7 @@ function updateChildComponent (
     vm.$forceUpdate();
   }
 
-  {
+  if (true) {
     isUpdatingChildComponent = false;
   }
 }
@@ -2949,7 +3634,7 @@ var index = 0;
 function resetSchedulerState () {
   index = queue.length = activatedChildren.length = 0;
   has = {};
-  {
+  if (true) {
     circular = {};
   }
   waiting = flushing = false;
@@ -3108,7 +3793,9 @@ var Watcher = function Watcher (
   this.newDeps = [];
   this.depIds = new _Set();
   this.newDepIds = new _Set();
-  this.expression = expOrFn.toString();
+  this.expression =  true
+    ? expOrFn.toString()
+    : '';
   // parse expression for getter
   if (typeof expOrFn === 'function') {
     this.getter = expOrFn;
@@ -3331,7 +4018,7 @@ function initProps (vm, propsOptions) {
     keys.push(key);
     var value = validateProp(key, propsOptions, propsData, vm);
     /* istanbul ignore else */
-    {
+    if (true) {
       var hyphenatedKey = hyphenate(key);
       if (isReservedAttribute(hyphenatedKey) ||
           config.isReservedAttr(hyphenatedKey)) {
@@ -3351,6 +4038,8 @@ function initProps (vm, propsOptions) {
           );
         }
       });
+    } else {
+      defineReactive(props, key, value);
     }
     // static props are already proxied on the component's prototype
     // during Vue.extend(). We only need to proxy props defined at
@@ -3384,7 +4073,7 @@ function initData (vm) {
   var i = keys.length;
   while (i--) {
     var key = keys[i];
-    {
+    if (true) {
       if (methods && hasOwn(methods, key)) {
         warn(
           ("Method \"" + key + "\" has already been defined as a data property."),
@@ -3452,7 +4141,7 @@ function initComputed (vm, computed) {
     // at instantiation here.
     if (!(key in vm)) {
       defineComputed(vm, key, userDef);
-    } else {
+    } else if (true) {
       if (key in vm.$data) {
         warn(("The computed property \"" + key + "\" is already defined in data."), vm);
       } else if (vm.$options.props && key in vm.$options.props) {
@@ -3513,7 +4202,7 @@ function createComputedGetter (key) {
 function initMethods (vm, methods) {
   var props = vm.$options.props;
   for (var key in methods) {
-    {
+    if (true) {
       if (methods[key] == null) {
         warn(
           "Method \"" + key + "\" has an undefined value in the component definition. " +
@@ -3575,7 +4264,7 @@ function stateMixin (Vue) {
   dataDef.get = function () { return this._data };
   var propsDef = {};
   propsDef.get = function () { return this._props };
-  {
+  if (true) {
     dataDef.set = function (newData) {
       warn(
         'Avoid replacing instance root $data. ' +
@@ -3631,7 +4320,7 @@ function initInjections (vm) {
     toggleObserving(false);
     Object.keys(result).forEach(function (key) {
       /* istanbul ignore else */
-      {
+      if (true) {
         defineReactive(vm, key, result[key], function () {
           warn(
             "Avoid mutating an injected value directly since the changes will be " +
@@ -3640,6 +4329,8 @@ function initInjections (vm) {
             vm
           );
         });
+      } else {
+        defineReactive(vm, key, result[key]);
       }
     });
     toggleObserving(true);
@@ -3674,7 +4365,7 @@ function resolveInject (inject, vm) {
           result[key] = typeof provideDefault === 'function'
             ? provideDefault.call(vm)
             : provideDefault;
-        } else {
+        } else if (true) {
           warn(("Injection \"" + key + "\" not found"), vm);
         }
       }
@@ -4200,7 +4891,7 @@ function createComponent (
   // if at this stage it's not a constructor or an async component factory,
   // reject.
   if (typeof Ctor !== 'function') {
-    {
+    if (true) {
       warn(("Invalid Component definition: " + (String(Ctor))), context);
     }
     return
@@ -4490,13 +5181,16 @@ function initRender (vm) {
   var parentData = parentVnode && parentVnode.data;
 
   /* istanbul ignore else */
-  {
+  if (true) {
     defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, function () {
       !isUpdatingChildComponent && warn("$attrs is readonly.", vm);
     }, true);
     defineReactive(vm, '$listeners', options._parentListeners || emptyObject, function () {
       !isUpdatingChildComponent && warn("$listeners is readonly.", vm);
     }, true);
+  } else {
+    defineReactive(vm, '$attrs', parentData && parentData.attrs || emptyObject, null, true);
+    defineReactive(vm, '$listeners', options._parentListeners || emptyObject, null, true);
   }
 }
 
@@ -4515,7 +5209,7 @@ function renderMixin (Vue) {
     var _parentVnode = ref._parentVnode;
 
     // reset _rendered flag on slots for duplicate slot check
-    {
+    if (true) {
       for (var key in vm.$slots) {
         // $flow-disable-line
         vm.$slots[key]._rendered = false;
@@ -4538,7 +5232,7 @@ function renderMixin (Vue) {
       // return error render result,
       // or previous vnode to prevent render error causing blank component
       /* istanbul ignore else */
-      {
+      if (true) {
         if (vm.$options.renderError) {
           try {
             vnode = vm.$options.renderError.call(vm._renderProxy, vm.$createElement, e);
@@ -4549,6 +5243,8 @@ function renderMixin (Vue) {
         } else {
           vnode = vm._vnode;
         }
+      } else {
+        vnode = vm._vnode;
       }
     }
     // return empty vnode in case the render function errored out
@@ -4602,8 +5298,10 @@ function initMixin (Vue) {
       );
     }
     /* istanbul ignore else */
-    {
+    if (true) {
       initProxy(vm);
+    } else {
+      vm._renderProxy = vm;
     }
     // expose real self
     vm._self = vm;
@@ -5017,7 +5715,7 @@ function initGlobalAPI (Vue) {
   // config
   var configDef = {};
   configDef.get = function () { return config; };
-  {
+  if (true) {
     configDef.set = function () {
       warn(
         'Do not replace the Vue.config object, set individual fields instead.'
@@ -5547,7 +6245,7 @@ function createPatchFunction (backend) {
     var children = vnode.children;
     var tag = vnode.tag;
     if (isDef(tag)) {
-      {
+      if (true) {
         if (data && data.pre) {
           creatingElmInVPre++;
         }
@@ -5662,7 +6360,7 @@ function createPatchFunction (backend) {
 
   function createChildren (vnode, children, insertedVnodeQueue) {
     if (Array.isArray(children)) {
-      {
+      if (true) {
         checkDuplicateKeys(children);
       }
       for (var i = 0; i < children.length; ++i) {
@@ -5796,7 +6494,7 @@ function createPatchFunction (backend) {
     // during leaving transitions
     var canMove = !removeOnly;
 
-    {
+    if (true) {
       checkDuplicateKeys(newCh);
     }
 
@@ -5970,7 +6668,7 @@ function createPatchFunction (backend) {
       return true
     }
     // assert node match
-    {
+    if (true) {
       if (!assertNodeMatch(elm, vnode, inVPre)) {
         return false
       }
@@ -6094,7 +6792,7 @@ function createPatchFunction (backend) {
             if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
               invokeInsertHook(vnode, insertedVnodeQueue, true);
               return oldVnode
-            } else {
+            } else if (true) {
               warn(
                 'The client-side rendered virtual DOM tree is not matching ' +
                 'server-rendered content. This is likely caused by incorrect ' +
@@ -6862,7 +7560,7 @@ function model (
   var tag = el.tag;
   var type = el.attrsMap.type;
 
-  {
+  if (true) {
     // inputs with type="file" are read only and setting the input's
     // value will throw an error.
     if (tag === 'input' && type === 'file') {
@@ -6889,7 +7587,7 @@ function model (
     genComponentModel(el, value, modifiers);
     // component v-model doesn't need extra runtime
     return false
-  } else {
+  } else if (true) {
     warn$1(
       "<" + (el.tag) + " v-model=\"" + value + "\">: " +
       "v-model is not supported on this element type. " +
@@ -6971,7 +7669,7 @@ function genDefaultModel (
 
   // warn if v-bind:value conflicts with v-model
   // except for inputs with v-bind:type
-  {
+  if (true) {
     var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
     var typeBinding = el.attrsMap['v-bind:type'] || el.attrsMap[':type'];
     if (value$1 && !typeBinding) {
@@ -8366,7 +9064,7 @@ var TransitionGroup = {
           children.push(c);
           map[c.key] = c
           ;(c.data || (c.data = {})).transition = transitionData;
-        } else {
+        } else if (true) {
           var opts = c.componentOptions;
           var name = opts ? (opts.Ctor.options.name || opts.tag || '') : c.tag;
           warn(("<transition-group> children must be keyed: <" + name + ">"));
@@ -8656,7 +9354,7 @@ function transformNode$1 (el, options) {
   var staticStyle = getAndRemoveAttr(el, 'style');
   if (staticStyle) {
     /* istanbul ignore if */
-    {
+    if (true) {
       var res = parseText(staticStyle, options.delimiters);
       if (res) {
         warn(
@@ -9184,7 +9882,7 @@ function parse (
       }
 
       function checkRootConstraints (el) {
-        {
+        if (true) {
           if (el.tag === 'slot' || el.tag === 'template') {
             warnOnce(
               "Cannot use <" + (el.tag) + "> as component root element because it may " +
@@ -9212,7 +9910,7 @@ function parse (
             exp: element.elseif,
             block: element
           });
-        } else {
+        } else if (true) {
           warnOnce(
             "Component template should contain exactly one root element. " +
             "If you are using v-if on multiple elements, " +
@@ -9254,7 +9952,7 @@ function parse (
 
     chars: function chars (text) {
       if (!currentParent) {
-        {
+        if (true) {
           if (text === template) {
             warnOnce(
               'Component template requires a root element, rather than just text.'
@@ -9370,7 +10068,7 @@ function processFor (el) {
     var res = parseFor(exp);
     if (res) {
       extend(el, res);
-    } else {
+    } else if (true) {
       warn$2(
         ("Invalid v-for expression: " + exp)
       );
@@ -9425,7 +10123,7 @@ function processIfConditions (el, parent) {
       exp: el.elseif,
       block: el
     });
-  } else {
+  } else if (true) {
     warn$2(
       "v-" + (el.elseif ? ('else-if="' + el.elseif + '"') : 'else') + " " +
       "used on element <" + (el.tag) + "> without corresponding v-if."
@@ -9583,7 +10281,7 @@ function processAttrs (el) {
       }
     } else {
       // literal attribute
-      {
+      if (true) {
         var res = parseText(value, delimiters);
         if (res) {
           warn$2(
@@ -10684,7 +11382,7 @@ function createCompileToFunctionFn (compile) {
     delete options.warn;
 
     /* istanbul ignore if */
-    {
+    if (true) {
       // detect possible CSP restriction
       try {
         new Function('return 1');
@@ -10713,7 +11411,7 @@ function createCompileToFunctionFn (compile) {
     var compiled = compile(template, options);
 
     // check compilation errors/tips
-    {
+    if (true) {
       if (compiled.errors && compiled.errors.length) {
         warn$$1(
           "Error compiling template:\n\n" + template + "\n\n" +
@@ -10738,7 +11436,7 @@ function createCompileToFunctionFn (compile) {
     // this should only happen if there is a bug in the compiler itself.
     // mostly for codegen development use
     /* istanbul ignore if */
-    {
+    if (true) {
       if ((!compiled.errors || !compiled.errors.length) && fnGenErrors.length) {
         warn$$1(
           "Failed to generate render function:\n\n" +
@@ -10794,7 +11492,7 @@ function createCompilerCreator (baseCompile) {
       }
 
       var compiled = baseCompile(template, finalOptions);
-      {
+      if (true) {
         errors.push.apply(errors, detectErrors(compiled.ast));
       }
       compiled.errors = errors;
@@ -10891,7 +11589,7 @@ Vue.prototype.$mount = function (
       } else if (template.nodeType) {
         template = template.innerHTML;
       } else {
-        {
+        if (true) {
           warn('invalid template option:' + template, this);
         }
         return this
@@ -10942,6 +11640,125 @@ function getOuterHTML (el) {
 
 Vue.compile = compileToFunctions;
 
-return Vue;
+module.exports = Vue;
 
-})));
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__("./node_modules/webpack/buildin/global.js"), __webpack_require__("./node_modules/timers-browserify/main.js").setImmediate))
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/global.js":
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/app.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__("./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Notification_vue__ = __webpack_require__("./resources/assets/js/components/Notification.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_Notification_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_Notification_vue__);
+
+
+
+
+new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+
+	el: '#app',
+
+	components: { Notification: __WEBPACK_IMPORTED_MODULE_1__components_Notification_vue___default.a }
+
+});
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/Notification.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\",[\"transform-runtime\",{\"polyfill\":false,\"helpers\":false}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Notification.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-66002d22\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./resources/assets/js/components/Notification.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Notification.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-66002d22", Component.options)
+  } else {
+    hotAPI.reload("data-v-66002d22", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/app.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 0:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__("./resources/assets/js/app.js");
+module.exports = __webpack_require__("./resources/assets/sass/app.scss");
+
+
+/***/ })
+
+/******/ });

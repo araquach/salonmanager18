@@ -12,6 +12,12 @@
 
 <h4>Welcome {{ Auth::user()->staff->first_name }}</h4>
 
+<div id="app">
+
+    <notification></notification>
+
+</div>
+
 
 <div id="menuBox">
     

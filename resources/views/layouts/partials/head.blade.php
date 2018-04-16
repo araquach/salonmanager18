@@ -18,9 +18,5 @@
 
 	<title>{{ $title or 'Salon Manager' }}</title>
 
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ elixir('css/app.css') }}" />
-	
-	<script type="text/javascript" src="{{ URL::asset('scripts/vue.js') }}"></script>
-	<script type="text/javascript" src="{{ URL::asset('scripts/jquery.js') }}"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/app.css" />
 </head>
