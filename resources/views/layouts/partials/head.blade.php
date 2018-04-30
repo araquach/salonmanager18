@@ -18,5 +18,7 @@
 
 	<title>{{ $title or 'Salon Manager' }}</title>
 
-	<link rel="stylesheet" type="text/css" media="screen" href="css/app.css" />
+	<script src="{{ asset('js/app.js') }}" defer></script>
+	
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
