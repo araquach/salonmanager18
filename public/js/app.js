@@ -119,7 +119,7 @@ window.Vue = __webpack_require__(3);
 Vue.component('date-picker', __webpack_require__(7));
 
 var app = new Vue({
-  el: '#app'
+  el: '#newapp'
 });
 
 /***/ }),
