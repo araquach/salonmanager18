@@ -18,10 +18,10 @@
 		    	<a href="{{ url('/freetime/index') }}" class="button">Free Time</a>
 		    </header>
 			
-			<div id="newapp">
-			@yield('content')
+		    <div id="app">
+				@yield('content')
 			</div>
-			
+						
 			<footer class="row">
 				<a href="{{ url('/') }}" class="button button-clear">Home</a>
 				@if (Auth::guest())

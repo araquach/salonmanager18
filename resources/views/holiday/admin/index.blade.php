@@ -13,7 +13,7 @@
 
 	@include('widgets.admin.holiday')
 
-	<nav class"pageHeadNav">
+	<nav class="pageHeadNav">
 		<a href="{{ url('/admin/holiday/create') }}" class="button button-outline">Book holiday</a>
 		<a href="{{ url('/admin/holiday/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
 		<a href="{{ url('/admin/holiday/index', 'approved') }}" class="button button-outline">Approved Holidays</a>

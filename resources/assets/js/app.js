@@ -13,7 +13,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('date-picker', require('vuejs-datepicker/dist/vuejs-datepicker.min.js'));
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#newapp'
+    el: '#app'
 });

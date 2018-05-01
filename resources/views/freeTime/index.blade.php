@@ -12,7 +12,7 @@
 
 @include('widgets.freeTime')
 
-<nav class"pageHeadNav">
+<nav class="pageHeadNav">
 	<a href="{{ url('/freetime/create') }}" class="button button-outline">Book Free Time</a>
 	<a href="{{ url('/freetime/index', 'upcoming') }}" class="button button-outline">Upcoming Free Time</a>
 	<a href="{{ url('/freetime/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>

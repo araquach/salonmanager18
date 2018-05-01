@@ -13,7 +13,7 @@
 
 	@include('widgets.admin.lieuHour')
 
-	<nav class"pageHeadNav">
+	<nav class="pageHeadNav">
 		<a href="{{ url('/admin/lieu/create') }}" class="button button-outline">Book lieuHour</a>
 		<a href="{{ url('/admin/lieu/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
 		<a href="{{ url('/admin/lieu/index', 'approved') }}" class="button button-outline">Approved Lieu Hours</a>

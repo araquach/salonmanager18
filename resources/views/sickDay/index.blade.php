@@ -12,7 +12,7 @@
 
 @include('widgets.sickDay')
 
-<nav class"pageHeadNav">
+<nav class="pageHeadNav">
 	<a href="{{ url('/sick/index', 'deducted') }}" class="button button-outline">Deducted Sick</a>
 	<a href="{{ url('/sick/index', 'awaiting') }}" class="button button-outline">Awaiting Deduction</a>
 	<a href="{{ url('/sick/index', 'all') }}" class="button button-outline">All Sick Days</a>

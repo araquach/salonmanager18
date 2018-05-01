@@ -12,13 +12,6 @@
 
 <h4>Welcome {{ Auth::user()->staff->first_name }}</h4>
 
-<div id="app">
-
-    <notification></notification>
-
-</div>
-
-
 <div id="menuBox">
     
     <a href="{{ url('/holiday/index') }}">
@@ -48,7 +41,6 @@
             @include('widgets.freeTime')
         </div>
     </a>
-
 
 </div>
 

@@ -12,7 +12,7 @@
 
 @include('widgets.lieuHour')
 
-<nav class"pageHeadNav">
+<nav class="pageHeadNav">
 	<a href="{{ url('/lieu/create') }}" class="button button-outline">Log Lieu Hours</a>
 	<a href="{{ url('/lieu/index', 'upcoming') }}" class="button button-outline">Upcoming Lieu</a>
 	<a href="{{ url('/lieu/index', 'awaiting') }}" class="button button-outline">Awaiting Approval</a>
