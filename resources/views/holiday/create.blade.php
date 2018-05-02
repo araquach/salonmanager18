@@ -11,7 +11,7 @@
 <div class="form holiday">
 	
 	<h2>Book a holiday</h2>
-		
+	
 	@if(Session::has('message'))
 	    <div>
 	    	{{{ Session::get('message') }}}

@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="form sickDay" id="app">
+<div class="form sickDay">
 	
 	<h2>Update Sick Days</h2>
 	
@@ -84,23 +84,5 @@
 	{{ Form::close() }}
 
 </div>
-
-<script>
-
-	new Vue({
-		el: '#app',
-		
-		data: {
-			days: '{!! $sickDay->sick_hours / 8 !!}',
-		},
-		
-		computed: {
-			hours: function () {
-    			return this.days * 8
-    		}
-		}
-	})
-	
-</script>
 
 @stop

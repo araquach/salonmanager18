@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="form holiday" id="app">
+<div class="form holiday">
 	
 	<h2>Book a holiday</h2>
 	
@@ -67,23 +67,5 @@
 
 
 </div>
-
-<script>
-
-	new Vue({
-		el: '#app',
-		
-		data: {
-			days: '',
-		},
-		
-		computed: {
-			hours: function () {
-    			return this.days * 8
-    		}
-		}
-	})
-	
-</script>
 
 @stop
